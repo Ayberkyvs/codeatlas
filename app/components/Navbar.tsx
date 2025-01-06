@@ -1,12 +1,12 @@
-import { auth, signIn, signOut } from "@/auth";
-import Image from "next/image";
-import Link from "next/link";
+import { auth, signIn, signOut } from '@/auth';
+import Image from 'next/image';
+import Link from 'next/link';
 const Navbar = async () => {
 	const session = await auth();
 
 	return (
-		<header className='px-5 py-3 bg-white shadow-sm font-work-sans'>
-			<nav className='flex justify-between items-center'>
+		<header className='bg-white px-5 py-3 font-work-sans shadow-sm'>
+			<nav className='flex items-center justify-between'>
 				<Link href='/'>
 					<Image
 						src='/logo.png'
@@ -24,8 +24,8 @@ const Navbar = async () => {
 							</Link>
 							<button
 								onClick={async () => {
-									"use server";
-									await signOut({redirectTo: "/"});
+									'use server';
+									await signOut({ redirectTo: '/' });
 								}}
 								type='button'
 							>
@@ -39,9 +39,9 @@ const Navbar = async () => {
 					) : (
 						<button
 							onClick={async () => {
-								"use server";
+								'use server';
 
-								await signIn("github");
+								await signIn('github');
 							}}
 							type='button'
 						>

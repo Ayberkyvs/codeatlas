@@ -1,13 +1,13 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+import React from 'react';
+import Navbar from '../components/Navbar';
 
-const Layout = ({children} : Readonly<{children: React.ReactNode}>) => {
-  return (
-    <main>
-        <Navbar />
-        {children}
-    </main>
-  )
-}
+const Layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+	return (
+		<main>
+			<Navbar />
+			{children}
+		</main>
+	);
+};
 
-export default Layout
+export default Layout;
