@@ -18,7 +18,9 @@ const eslintConfig = [
     },
     rules: {
       ...eslintPluginTailwindcss.configs.recommended.rules,
+      "tailwindcss/no-custom-classname": "off",
     },
+    ignores: ["ui/*"]
   },
 ];
 
