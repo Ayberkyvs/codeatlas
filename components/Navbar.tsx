@@ -1,11 +1,15 @@
 import { auth, signIn, signOut } from '@/auth';
+import { BadgePlus, Github, LogOut } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Avatar, AvatarImage } from '@/components/ui/avatar';
+import { AvatarFallback } from '@radix-ui/react-avatar';
+import { Button } from './ui/button';
 const Navbar = async () => {
 	const session = await auth();
 
 	return (
-		<header className='bg-white px-5 py-3 font-work-sans shadow-sm'>
+		<header className='bg-white px-5 py-3 font-work-sans shadow-md'>
 			<nav className='flex items-center justify-between'>
 				<Link href='/'>
 					<Image
@@ -16,37 +20,49 @@ const Navbar = async () => {
 					/>
 				</Link>
 
-				<div className='flex items-center gap-5 text-black'>
+				<div className='flex justify-center items-center gap-5 text-black'>
 					{session && session?.user ? (
 						<>
 							<Link href='/startup/create'>
-								<span>Create</span>
+								<span className='max-sm:hidden'>Create</span>
+								<BadgePlus className='size-6 sm:hidden' />
 							</Link>
-							<button
-								onClick={async () => {
+							<form
+								action={async () => {
 									'use server';
 									await signOut({ redirectTo: '/' });
 								}}
-								type='button'
+								className='flex items-center'
 							>
-								<span>Logout</span>
-							</button>
+								<button type='submit'>
+									<span className='max-sm:hidden'>Logout</span>
+									<LogOut className='size-6 text-red-500 sm:hidden' />
+								</button>
+							</form>
 
-							<Link href={`/user/${session?.user?.id}`}>
-								<span>{session?.user?.name}</span>
+							<Link href={`user/${session?.id}`}>
+								<Avatar className='size-10'>
+									<AvatarImage
+										src={session?.user?.image || ''}
+										alt={`${session?.user?.name} avatar` || ''}
+									/>
+									<AvatarFallback>AV</AvatarFallback>
+								</Avatar>
 							</Link>
 						</>
 					) : (
-						<button
-							onClick={async () => {
+						<form
+							action={async () => {
 								'use server';
 
 								await signIn('github');
 							}}
-							type='button'
 						>
-							<span>Login</span>
-						</button>
+							<Button type='submit' className='bg-black text-white hover:cursor-pointer'>
+								<Github className='text-white'/>
+								<span className='text-white text-14-medium'>Login</span>
+							</Button>
+						</form>
 					)}
 				</div>
 			</nav>

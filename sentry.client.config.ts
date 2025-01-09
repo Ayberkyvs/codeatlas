@@ -6,7 +6,7 @@ import * as Sentry from "@sentry/nextjs";
 
 Sentry.init({
   dsn: "https://0bc12368a07f0db52acea1aead5bd019@o4508614422495232.ingest.de.sentry.io/4508614426493008",
-
+  enabled: process.env.NODE_ENV === 'production',
   // Add optional integrations for additional features
   integrations: [
     Sentry.replayIntegration(),
