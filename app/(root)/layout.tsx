@@ -1,14 +1,10 @@
-import React from 'react';
-import Navbar from '@/components/Navbar';
-import { Toaster } from '@/components/ui/toaster';
-const Layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
-	return (
-		<main>
-			<Navbar />
-			{children}
-			<Toaster />
-		</main>
-	);
-};
+import Navbar from "@/components/Navbar";
 
-export default Layout;
+export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
+    return (
+        <main className="font-work-sans">
+            <Navbar />
+            {children}
+        </main>
+    )
+}
