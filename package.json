@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "cross-env NODE_ENV=production DISABLE_ESLINT_PLUGIN=true next build",
-    "start": "cross-env NODE_ENV=production DISABLE_ESLINT_PLUGIN=true next start",
+    "build": "cross-env NODE_ENV=production next build",
+    "start": "cross-env NODE_ENV=production next start",
     "lint": "next lint",
     "predev": "pnpm run typegen",
     "prebuild": "pnpm run typegen",
