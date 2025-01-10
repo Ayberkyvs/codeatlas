@@ -8,8 +8,8 @@ declare module "next-auth" {
         id: string;
     }
     interface Profile {
-        id: string;
-        login: string;
-        bio: string;
+        id?: string;
+        login?: string;
+        bio?: string;
       }
 }
