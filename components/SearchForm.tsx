@@ -9,7 +9,7 @@ const SearchForm = ({query}: {query: string}) => {
 			<input
 				name='query'
 				defaultValue={query}
-				className='search-input'
+				className='search-input placeholder:text-16-medium xs:placeholder:text-20-medium'
 				placeholder='Search for startups'
 			/>
 
