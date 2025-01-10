@@ -20,7 +20,7 @@ const Navbar = async () => {
 					/>
 				</Link>
 
-				<div className='flex justify-center items-center gap-5 text-black'>
+				<div className='flex items-center justify-center gap-5 text-black'>
 					{session && session?.user ? (
 						<>
 							<Link href='/startup/create'>
@@ -58,9 +58,12 @@ const Navbar = async () => {
 								await signIn('github');
 							}}
 						>
-							<Button type='submit' className='bg-black text-white hover:cursor-pointer'>
-								<Github className='text-white'/>
-								<span className='text-white text-14-medium'>Login</span>
+							<Button
+								type='submit'
+								className='bg-black text-white hover:cursor-pointer'
+							>
+								<Github className='text-white' />
+								<span className='text-14-medium text-white'>Login</span>
 							</Button>
 						</form>
 					)}

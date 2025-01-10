@@ -17,7 +17,7 @@ const StartupForm = () => {
 	const [pitch, setPitch] = useState<string>('');
 	const { toast } = useToast();
 	const router = useRouter();
-	const handleFormSubmit = async (prevState: any, formData: FormData) => {
+	const handleFormSubmit = async (prevState: Record<string, string>, formData: FormData) => {
 		try {
 			const formValues = {
 				title: formData.get('title') as string,

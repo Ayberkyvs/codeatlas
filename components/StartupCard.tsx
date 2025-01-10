@@ -5,12 +5,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from './ui/button';
 import { StartupCardType } from '@/lib/definitions';
-import { Startup } from '../sanity/types';
 import { Skeleton } from './ui/skeleton';
 
 const StartupCard = ({ post }: { post: StartupCardType }) => {
 	const {
-		slug,
 		_createdAt,
 		views,
 		description,

@@ -1,4 +1,3 @@
-import { auth } from '@/auth';
 import SearchForm from '@/components/SearchForm';
 import StartupCard from '@/components/StartupCard';
 import { StartupCardType } from '@/lib/definitions';
