@@ -14,7 +14,7 @@ import View from '@/components/View';
 import { StartupCardType } from '@/lib/definitions';
 import StartupCard from '@/components/StartupCard';
 
-export const experimental_ppr = true;
+// export const experimental_ppr = true;
 
 const md = markdownit();
 
